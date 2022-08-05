@@ -1,0 +1,12 @@
+.cities-container{
+    background-image: url("https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/03/09/16468231897426.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+.cities-first-box{
+    background-color: #4287f5;
+    padding: 1vh 0;
+}

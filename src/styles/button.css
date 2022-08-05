@@ -1,0 +1,19 @@
+.button-background{
+    background-color: #4287f5;
+    padding: 5vh;
+}
+.text-hero{
+    color: white;
+}
+.button-hero{
+    background-color: #eba834;
+    border: none;
+    padding: 1vh;
+    color: white;
+    font-size: 2rem;
+}
+.button-hero:hover{
+    background-color: #c58d2b;
+    transition: 0.5s;
+    cursor: pointer;
+}

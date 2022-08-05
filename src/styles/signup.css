@@ -1,0 +1,44 @@
+.form-div{
+    background-image: url("https://freewalkertours.com/wp-content/uploads/cosas-que-hacer-en-r%C3%ADo-cristo-redentor-1100x620.jpg");
+    min-height: 65vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* flex-direction: column; */
+    padding: 2vh;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh;
+    width: 25vw;
+    background-color: #4287f5;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5vh 3vh ;
+}
+.select-forms,.textfield{
+    width: 100%;
+}
+.element-form{
+    margin: 10px;
+}
+.buttons{
+    width: 55%;
+    height: 5.1vh; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media (max-width:694px){
+    form{
+        width: 60vw;
+    }
+    .buttons{
+        min-width: 182px;
+    }
+}

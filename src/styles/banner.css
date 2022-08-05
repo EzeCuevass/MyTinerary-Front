@@ -1,0 +1,14 @@
+.Banner{
+    min-height: 89vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../images/playa.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h2{
+    color: white;
+}

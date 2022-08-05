@@ -1,0 +1,73 @@
+[
+    {
+        "id": "1",
+        "name" : "Baia do Sancho",
+        "image" : "https://media.istockphoto.com/photos/aerial-view-of-baa-do-sancho-in-fernando-de-noronha-consistently-one-picture-id1187018564?k=20&m=1187018564&s=612x612&w=0&h=ortnTsgV_SchENNfykcHagkeJXkjwd37PDoNtxno1vw=",
+        "city": "Fernando de Noronha (Brazil)"
+    },
+    {
+        "id": "2",
+        "name" : "Eagle Beach",
+        "image" : "https://cf.bstatic.com/xdata/images/hotel/max1024x768/332103312.jpg?k=c63c22341b804b1e9b96f2b64f48c79f6a9f59baa09ee53334d51514d58ee331&o=&hp=1",
+        "city" : "Aruba"
+    },
+    {
+        "id": "3",
+        "name" : "Grace Bay",
+        "image" : "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/62000/62206-Grace-Bay.jpg",
+        "city" : "Providenciales (Turks and Caicos Islands)"
+    },
+    {
+        "id": "4",
+        "name" : "Mar del Plata",
+        "image" : "https://cdn2.civitatis.com/argentina/mar-del-plata/galeria/lobos-marinos-mar-plata.jpg",
+        "city" : "Buenos Aires (Argentina)"
+    },
+    {
+        "id": "5",
+        "name" : "Natal",
+        "image" : "https://exp.cdn-hotels.com/hotels/57000000/56520000/56520000/56519975/c5957ebb_z.jpg?impolicy=fcrop&w=500&h=333&q=medium",
+        "city" : "Brazil"
+    },
+    {
+        "id": "6",
+        "name" : "Playa dei Conigli",
+        "image" : "https://www.enviajeporeuropa.com/wp-content/uploads/2022/02/Isola-dei-Conigli-1280x720.jpg",
+        "city" : "Agrigento (Italy)"
+    },
+    {
+        "id": "7",
+        "name" : "Quarta Praia",
+        "image" : "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/91/f0/65/visual-maravilhoso.jpg?w=1200&h=-1&s=1",
+        "city" : "Sao Paulo (Brazil)"
+    },
+    {
+        "id": "8",
+        "name" : "Radhanagar Beach",
+        "image" : "https://uploads-ssl.webflow.com/5b56319971ac8c7475a9d877/5ee481817da4561eb9621b3e_Radhanagar-.JPG",
+        "city" : "India"
+    },
+    {
+        "id": "9",
+        "name" : "Turquoise Bay",
+        "image" : "https://i.ytimg.com/vi/A1mF9jBBcWA/maxresdefault.jpg",
+        "city" : "Australia"
+    },
+    {
+        "id": "10",
+        "name" : "Trunk Bay",
+        "image" : "https://sworld.co.uk/img/img/93/photoAlbum/56968/originals/0.jpg",
+        "city" : "Virgin Islands (USA)"
+    },
+    {
+        "id": "11",
+        "name" : "Varadero",
+        "image" : "https://apiimg.iberostar.com/uploads/image/52144/image.jpeg",
+        "city" : "Cuba"
+    },
+    {
+        "id": "12",
+        "name" : "Hawaii",
+        "image" : "https://media.iatiseguros.com/wp-content/uploads/2018/04/04005429/que-hacer-en-hawaii-5.jpg"
+    }
+]

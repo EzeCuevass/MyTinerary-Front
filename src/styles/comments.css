@@ -1,0 +1,38 @@
+.input-comment{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 95%;
+}
+.comments-box{
+    color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.comments-box-container{
+    width: 100%;
+}
+.comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: 1vh;
+}
+.box-comment{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vh;
+    align-items: flex-start;
+}
+#textmodify{
+    display: none;
+}
+.visible{
+    display: block !important;
+}

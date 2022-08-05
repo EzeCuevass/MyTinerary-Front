@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.354b0e71.css",
+    "main.js": "/static/js/main.1cb155b4.js",
+    "static/media/playa.webp": "/static/media/playa.eae0553534af08dd9699.webp",
+    "static/media/MyTinerary.png": "/static/media/MyTinerary.8891748d7aeb79b6b1a4.png",
+    "index.html": "/index.html",
+    "main.354b0e71.css.map": "/static/css/main.354b0e71.css.map",
+    "main.1cb155b4.js.map": "/static/js/main.1cb155b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.354b0e71.css",
+    "static/js/main.1cb155b4.js"
+  ]
+}
