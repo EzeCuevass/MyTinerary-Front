@@ -1,4 +1,6 @@
 import axios from "axios";
+let url = "https://mytinerary-back-cuevas.herokuapp.com"
+// let url = "http://localhost:4000"
 
 const commentActions = {
 
@@ -6,7 +8,7 @@ addComment: (comment) => {
     const token = localStorage.getItem('token')
     return async (dispatch, getState) => {
     if (comment.comments.comment !== "") {
-        const res = await axios.post(`https://mytinerary-back-cuevas.herokuapp.com/api/comments`, { comment }, {
+        const res = await axios.post(url+`/api/comments`, { comment }, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -38,7 +40,7 @@ addComment: (comment) => {
 modifyComment: (comment) => {
     const token = localStorage.getItem('token')
     return async (dispatch, getState) => {
-        const res = await axios.put(`https://mytinerary-back-cuevas.herokuapp.com/api/comments`, { comment }, {
+        const res = await axios.put(url+`/api/comments`, { comment }, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -57,7 +59,7 @@ modifyComment: (comment) => {
 deleteComment: (id) => {
     const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
-            const res = await axios.post(`https://mytinerary-back-cuevas.herokuapp.com/api/comments/${id}`,{},
+            const res = await axios.post(url+`/api/comments/${id}`,{},
             {headers: {'Authorization': "Bearer "+token}}
         )
         dispatch({

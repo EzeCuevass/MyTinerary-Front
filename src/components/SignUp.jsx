@@ -1,22 +1,24 @@
 import React, {useState} from "react";
 import userActions from "../redux/actions/userActions";
-import { connect } from "react-redux"
+import { connect, useDispatch } from "react-redux"
 import TextField from '@mui/material/TextField';
 import GoogleSignUp from "./gSignup";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-
+import { useNavigate } from "react-router-dom";
 
 import "../styles/signup.css"
 function SignUp(props){
+    let dispatch = useDispatch()
+    let navigate = useNavigate()
     const [fullname, setFullname] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [country, setCountry] = useState("")
     const [photo, setPhoto] = useState("")
-    var countries = ["", "Argentina", "Bolivia","Brasil", "Chile", "Colombia", "Ecuador", "Peru", "Paraguay", "Venezuela", "Uruguay"]
+    let countries = ["Select your country", "Argentina", "Bolivia","Brasil", "Chile", "Colombia", "Ecuador", "Peru", "Paraguay", "Venezuela", "Uruguay"]
     
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
         event.preventDefault()
         const userData = {
             fullname: fullname,
@@ -26,7 +28,14 @@ function SignUp(props){
             photo: photo,
             from: "form-Signup",
         }    
-    props.signUp(userData)
+    let res = await dispatch(userActions.signUp(userData))
+    console.log(res);
+    if(res.data.success){
+        navigate("/")
+    }
+    else if (res.data.message=="You have done your sign up in this way, please sign in"){
+        navigate("/")
+    }
 }
     return(
         <>
@@ -47,12 +56,10 @@ function SignUp(props){
         </>
     )
 }
-const mapDispatchToProps = {
-    signUp: userActions.signUp
-}
+
 const mapStateToProps = (state) => {
     return {
         message: state.userReducer.message
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps) (SignUp)
+export default connect(mapStateToProps) (SignUp)

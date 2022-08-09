@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import userActions from "../redux/actions/userActions"
-import { connect } from "react-redux"
+import { useDispatch } from "react-redux"
 import TextField from '@mui/material/TextField';
 import GoogleSignIn from "./gSignIn";
 import "../styles/signup.css"
+import { useNavigate } from "react-router-dom";
 
 function SignIn(props){
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const handleSubmit = async (event) => {
@@ -15,8 +18,12 @@ function SignIn(props){
             password: password,
             from: "form-Signin",
         }
-        await props.signIn(logedUser)
+        let res = await dispatch(userActions.signIn(logedUser))
+        if(res.data.success){
+            navigate("/")
+        }
     }
+    
     return(
         <div className="form-div">
             <form onSubmit={handleSubmit}>
@@ -28,12 +35,5 @@ function SignIn(props){
         </div>
     )
 }
-const mapDispatchToProps = {
-    signIn: userActions.signIn
-}
-const mapStateToProps = (state) => {
-    return {
-        message: state.userReducer.message
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
+
+export default SignIn

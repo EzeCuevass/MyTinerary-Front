@@ -1,9 +1,11 @@
 import axios from "axios";
+let url = "https://mytinerary-back-cuevas.herokuapp.com"
+// let url = "http://localhost:4000"
 const userActions = {
     signUp: (userData) => {
         return async(dispatch, getState) => {
             try {
-                const res = await axios.post("https://mytinerary-back-cuevas.herokuapp.com/api/auth/signUp",{userData})
+                const res = await axios.post(url+"/api/auth/signUp",{userData})
                 dispatch({type: "MESSAGE",
                     payload: {
                         view: true,
@@ -22,7 +24,7 @@ const userActions = {
         // console.log(logedUser)
         try {
             return async (dispatch, getState) => {
-            const res = await axios.post("https://mytinerary-back-cuevas.herokuapp.com/api/auth/signIn",{logedUser})
+            const res = await axios.post(url+"/api/auth/signIn",{logedUser})
             // console.log(res)
             if (res.data.success) {
                 // console.log(res.data.response);
@@ -53,7 +55,7 @@ const userActions = {
     verifyToken: (token) => {
         // console.log(token);
         return async (dispatch, getState) => {
-            await axios.get("https://mytinerary-back-cuevas.herokuapp.com/api/auth/signInToken", {headers:{'Authorization': 'Bearer ' + token}})
+            await axios.get(url+"/api/auth/signInToken", {headers:{'Authorization': 'Bearer ' + token}})
             .then(user=>{if (user.data.success){
                 // console.log(user);
                 dispatch({type:"USER",payload:user.data.response})

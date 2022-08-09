@@ -2,15 +2,15 @@ import React, { useEffect } from 'react'
 import jwt_decode from "jwt-decode"
 import { useDispatch } from "react-redux"
 import userActions from '../redux/actions/userActions'
-
+import {useNavigate} from "react-router-dom"
 function GoogleSignUp() {
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     async function handleCallback(res){
-        console.log(res);
+        // console.log(res);
         const userObject = jwt_decode(res.credential)
-        console.log(userObject)
-        dispatch(userActions.signUp({
+        // console.log(userObject)
+        let response = await dispatch(userActions.signUp({
             fullname: userObject.name,
             email: userObject.email,
             password: userObject.sub,
@@ -18,6 +18,12 @@ function GoogleSignUp() {
             photo: userObject.picture,
             from: "Google Sign Up"
         }))
+        console.log(response);
+        if(response.data.success){
+            navigate("/signin")
+        } else if (response.data.message=="You have done your sign up in this way, please sign in"){
+            navigate("/signin")
+        }
     }
     useEffect(()=>{
     /* global google */

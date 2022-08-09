@@ -148,7 +148,7 @@ const Navbar = () => {
               
               
               {user==null?
-              ( <>
+              ( <div>
                 <LinkRouter to="/signup">
                   <MenuItem key="signUp" onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Sign Up</Typography>
@@ -159,14 +159,14 @@ const Navbar = () => {
                     <Typography textAlign="center">Sign In</Typography>
                   </MenuItem>
                 </LinkRouter>
-                </>
+                </div>
                 ):
                 (
-                <>
+                <div>
                   <MenuItem key="signOut" onClick={handleCloseUserMenu}>
                     <SignOut />
                   </MenuItem>
-                  </>
+                  </div>
                 )
               }
             </Menu>

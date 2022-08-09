@@ -2,19 +2,24 @@ import React, { useEffect } from 'react'
 import jwt_decode from "jwt-decode"
 import { useDispatch } from "react-redux"
 import userActions from '../redux/actions/userActions'
+import { useNavigate } from "react-router-dom"
 
 function GoogleSignIn() {
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     async function handleCallback(res){
         // console.log(res);
         const userObject = jwt_decode(res.credential)
-        console.log(userObject)
-        dispatch(userActions.signIn({
+        // console.log(userObject)
+        let response = await dispatch(userActions.signIn({
             email: userObject.email,
             password: userObject.sub,
             from: "Google Sign In"
         }))
+        // console.log(response);
+        if(response.data.success){
+            navigate("/")
+        }
     }
     useEffect(()=>{
     /* global google */

@@ -7,7 +7,9 @@ import AddIcon from "@mui/icons-material/Add"
 import { TextField } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
+import Avatar from '@mui/material/Avatar';
 import "../styles/comments.css"
+import { useRef } from "react";
 
 function Comments({itinerary, cityid}){
     // console.log(itinerary);
@@ -20,7 +22,8 @@ function Comments({itinerary, cityid}){
     const user = useSelector(store=>store.userReducer.user)
 
     // let itineraryId = itinerary._id
-    var textmodify = document.getElementById("textmodify")
+    // let textmodify = document.getElementById("textmodify")
+    let textmodify = useRef() 
     async function toAdd(event) {
         const commentData = {
             itineraryId: itinerary._id,
@@ -34,7 +37,7 @@ function Comments({itinerary, cityid}){
         setReload(!reload)
     }
     async function toModify(comments){
-        textmodify.classList.toggle("visible")
+        // textmodify.classList.toggle("visible")
         const commentData = {
             commentId : comments._id,
             comment: modify
@@ -50,7 +53,7 @@ function Comments({itinerary, cityid}){
     useEffect(()=>{
         dispatch(itinerariesActions.findTinFromCity(cityid))
     },[reload])
-    console.log(user);
+    console.log(itinerary.comments);
     return(
         <div className="comments-box">
             <div className="comments-container">
@@ -64,23 +67,27 @@ function Comments({itinerary, cityid}){
                         itinerary.comments.map(comments=>(
                             <div className="comment" key={comments._id}>
                                     <div className="box-comment">
-                                        <p className="date-p">{new Date(comments.date).toUTCString()}</p>
+                                        <Avatar alt="Remy Sharp" src={comments.iduser.photo} />
+                                        <p>{comments.iduser.fullname} commments: </p>
                                         <p>{comments.comment}</p>
+                                        <p className="date-p">{new Date(comments.date).toUTCString()}</p>
                                     </div>
                             </div>
                         ))
                     :
                         itinerary.comments.map(comments=>
                             (
-                            user.id==comments.iduser?
+                            user.id==comments.iduser._id?
                             (
                             <div className="comment" key={comments._id}>
                                 {/* <p>{user.}</p> */}
                                 {/* <img src={comments.iduser.photo} alt="godines"/> */}
                                 <div className="box-comment">
-                                    <p className="date-p">{new Date(comments.date).toUTCString()}</p>
+                                    <Avatar alt="Remy Sharp" src={comments.iduser.photo} />
+                                    <p>{comments.iduser.fullname} commments: </p>
                                     <p>{comments.comment}</p>
-                                    <textarea rows='2' onChange={(event) => setModify(event.target.value)} defaultValue={comments.comment} id="textmodify" key={comments._id}/>
+                                    <p className="date-p">{new Date(comments.date).toUTCString()}</p>
+                                    <textarea rows='2' onChange={(event) => setModify(event.target.value)} defaultValue={comments.comment} ref={textmodify} key={comments._id}/>
                                 </div>
                                 <div>
                                 <EditIcon id={comments._id} onClick={() => toModify(comments)} />
@@ -91,8 +98,10 @@ function Comments({itinerary, cityid}){
                             (<div className="comment" key={comments._id}>
                                 {/* <img src={comments.iduser.photo} alt="godines"/> */}
                                 <div className="box-comment">
-                                    <p className="date-p">{new Date(comments.date).toUTCString()}</p>
+                                    <Avatar alt="Remy Sharp" src={comments.iduser.photo} />
+                                    <p>{comments.iduser.fullname} commments: </p>
                                     <p>{comments.comment}</p>
+                                    <p className="date-p">{new Date(comments.date).toUTCString()}</p>
                                 </div>
                             </div>
                             ))):
