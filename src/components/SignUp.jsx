@@ -43,7 +43,7 @@ function SignUp(props){
             <form onSubmit={handleSubmit}>
                 <TextField className="textfield element-form" type="text" id="filled-basic fullname" label="Full name" variant="filled" name="fullname" itemID="fullname" value={fullname} onChange={e=>setFullname(e.target.value)} required/>
                 <TextField className="textfield element-form" type="text" id="filled-basic email" label="Email" variant="filled" name="email" itemID="Email" value={email} onChange={e=>setEmail(e.target.value)} required/>
-                <TextField className="textfield element-form" type="text" id="filled-basic password" label="Password" variant="filled" name="password" itemID="password" value={password} onChange={e=>setPassword(e.target.value)} required/>
+                <TextField className="textfield element-form" type="password" id="filled-basic password" label="Password" variant="filled" name="password" itemID="password" value={password} onChange={e=>setPassword(e.target.value)} required/>
                 <Select className="select-forms element-form" name="country" id="country" onChange={e=>setCountry(e.target.value)} required>
                     {countries.map( everyCountry =>
                         <MenuItem key={everyCountry} value={everyCountry}>{everyCountry}</MenuItem>)}
