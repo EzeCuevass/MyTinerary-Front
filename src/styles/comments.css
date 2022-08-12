@@ -1,12 +1,14 @@
 .input-comment{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-    width: 95%;
+    width: 90%;
+    margin: 5px 0 !important;
+    margin-left: 10px !important;
 }
 .comments-box{
     color: white;
@@ -29,10 +31,26 @@
     flex-direction: column;
     margin-left: 1vh;
     align-items: flex-start;
+    width: 100%;
 }
 #textmodify{
     display: none;
 }
 .visible{
     display: block !important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    color: white !important;
+}
+.css-10j2df2-MuiFormControl-root-MuiTextField-root{
+    width: 100%;
+}
+.pointer{
+    cursor: pointer;
+}
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 6vh;
 }

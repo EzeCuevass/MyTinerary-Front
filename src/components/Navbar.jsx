@@ -47,9 +47,11 @@ const Navbar = () => {
     <AppBar position="static" sx={{backgroundColor: "#eba834"}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-            <img src={Logo} alt="Logo" style={{height: "11vh"}}/>
-          </Box>
+          <LinkRouter to="/">
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
+              <img src={Logo} alt="Logo" style={{height: "11vh"}}/>
+            </Box>
+          </LinkRouter>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"

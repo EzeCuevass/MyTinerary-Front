@@ -70,7 +70,7 @@ function Comments({itinerary, cityid}){
                                         <Avatar alt="Remy Sharp" src={comments.iduser.photo} />
                                         <p>{comments.iduser.fullname} commments: </p>
                                         <p>{comments.comment}</p>
-                                        <p className="date-p">{new Date(comments.date).toUTCString()}</p>
+                                        <p className="date-p">{new Date(comments.date).toLocaleDateString()}</p>
                                     </div>
                             </div>
                         ))
@@ -85,13 +85,16 @@ function Comments({itinerary, cityid}){
                                 <div className="box-comment">
                                     <Avatar alt="Remy Sharp" src={comments.iduser.photo} />
                                     <p>{comments.iduser.fullname} commments: </p>
-                                    <p>{comments.comment}</p>
-                                    <p className="date-p">{new Date(comments.date).toUTCString()}</p>
-                                    <textarea rows='2' onChange={(event) => setModify(event.target.value)} defaultValue={comments.comment} ref={textmodify} key={comments._id}/>
+                                    {/* <p>{comments.comment}</p> */}
+                                    <TextField id="standart-basic" defaultValue={comments.comment} onChange={(event) => setModify(event.target.value)} key={comments._id} sx={{
+                                                                                                                                                                                    color: "red",
+                                                                                                                                                                                }}/>
+                                    <p className="date-p">{new Date(comments.date).toLocaleDateString()}</p>
+                                    {/* <textarea rows='2' onChange={(event) => setModify(event.target.value)} defaultValue={comments.comment} key={comments._id}/> */}
                                 </div>
-                                <div>
-                                <EditIcon id={comments._id} onClick={() => toModify(comments)} />
-                                <DeleteIcon id={comments._id} onClick={() => toDelete(comments)} />
+                                <div className="icons">
+                                <EditIcon id={comments._id} onClick={() => toModify(comments)} className="pointer"/>
+                                <DeleteIcon id={comments._id} onClick={() => toDelete(comments)} className="pointer"/>
                                 </div>
                             </div>
                             ):
@@ -101,7 +104,7 @@ function Comments({itinerary, cityid}){
                                     <Avatar alt="Remy Sharp" src={comments.iduser.photo} />
                                     <p>{comments.iduser.fullname} commments: </p>
                                     <p>{comments.comment}</p>
-                                    <p className="date-p">{new Date(comments.date).toUTCString()}</p>
+                                    <p className="date-p">{new Date(comments.date).toLocaleDateString()}</p>
                                 </div>
                             </div>
                             ))):
@@ -112,8 +115,8 @@ function Comments({itinerary, cityid}){
                 }
             </div>
             <div className="input-comment">
-                <TextField id="standard-basic" label="Comment" variant="standard" onChange={(event) => setInputText(event.target.value)} value={inputText}/>
-                <AddIcon onClick={toAdd}  />
+                <TextField id="standart-basic" label="Comment" onChange={(event) => setInputText(event.target.value)} value={inputText}/>
+                <AddIcon onClick={toAdd} className="pointer"/>
             </div>
         </div>
     )
