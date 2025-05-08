@@ -1,5 +1,5 @@
 import axios from "axios";
-let url = "https://mytinerary-back-cuevas.netlify.app"
+let url = "https://mytinerary-back-production-abd3.up.railway.app/"
 // let url = "http://localhost:4000"
 const userActions = {
     signUp: (userData) => {
