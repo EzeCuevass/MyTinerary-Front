@@ -1,5 +1,5 @@
 import axios from "axios";
-let url = "https://mytinerary-back-cuevas.herokuapp.com"
+let url = "https://mytinerary-back-cuevas.netlify.app"
 // let url = "http://localhost:4000"
 
 const itinerariesActions = {
