@@ -21,7 +21,7 @@ function GoogleSignUp() {
         console.log(response);
         if(response.data.success){
             navigate("/signin")
-        } else if (response.data.message=="You have done your sign up in this way, please sign in"){
+        } else if (response.data.message==="You have done your sign up in this way, please sign in"){
             navigate("/signin")
         }
     }
@@ -38,7 +38,7 @@ function GoogleSignUp() {
     })
     return(
         <div>
-            <div classname="buttons" id='gButton'></div>
+            <div className="buttons" id='gButton'></div>
         </div>
     )
 }
