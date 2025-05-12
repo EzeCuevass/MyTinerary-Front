@@ -20,9 +20,8 @@ function App() {
       const token = localStorage.getItem("token")
       dispatch(userActions.verifyToken(token))
     }
-  },[])
-  const user = useSelector(store=>store.userReducer.user)
-  // console.log(user); 
+  },[dispatch])
+
 
   return (
     <div className="App">

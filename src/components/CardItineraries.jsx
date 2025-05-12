@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
 function CardItineararies({cityid, itinerary}){
     const dispatch = useDispatch()
     const [reload, setReload] = useState()
-    const [likes, setLikes] = useState()
+    const [,setLikes] = useState(itinerary.likes.length)
     
     const user = useSelector(store=>store.userReducer.user)
     
@@ -38,7 +38,7 @@ function CardItineararies({cityid, itinerary}){
     
     useEffect(()=>{
         dispatch(itinerariesActions.findTinFromCity(cityid))
-    },[reload])
+    },[reload,cityid,dispatch])
     
     
     // expand button
@@ -52,7 +52,7 @@ function CardItineararies({cityid, itinerary}){
         <div className="itinerary" key={itinerary._id}>
                     <div className="itinerary-box-one">
                         <div className="box-photo">
-                            <img src={itinerary.personPhoto} alt="photo" className="photo-itinerary"/>
+                            <img src={itinerary.personPhoto} alt="itinerary" className="photo-itinerary"/>
                         </div>
                         <div className="person-name">
                             <p>{itinerary.person}</p>
@@ -97,7 +97,7 @@ function CardItineararies({cityid, itinerary}){
                                     <div className="activities" key={activities._id}>
                                         <p>{activities.activity}</p>
                                         <div className="activity-box-photo">
-                                            <img src={activities.activityphoto} alt="image-activity" className="activity-photo"/>
+                                            <img src={activities.activityphoto} alt="activity"className="activity-photo"/>
                                         </div>
                                     </div>
                                 ))
