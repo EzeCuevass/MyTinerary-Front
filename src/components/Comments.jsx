@@ -9,11 +9,10 @@ import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
 import Avatar from '@mui/material/Avatar';
 import "../styles/comments.css"
-import { useRef } from "react";
+// import { useRef } from "react";
 
 function Comments({itinerary, cityid}){
     // console.log(itinerary);
-    const [comments, setComments] = useState([])
     const [inputText, setInputText] = useState()
     const [modify, setModify] = useState()
     const [reload, setReload] = useState()
@@ -23,7 +22,7 @@ function Comments({itinerary, cityid}){
 
     // let itineraryId = itinerary._id
     // let textmodify = document.getElementById("textmodify")
-    let textmodify = useRef() 
+    // let textmodify = useRef() 
     async function toAdd(event) {
         const commentData = {
             itineraryId: itinerary._id,
@@ -52,7 +51,7 @@ function Comments({itinerary, cityid}){
 
     useEffect(()=>{
         dispatch(itinerariesActions.findTinFromCity(cityid))
-    },[reload])
+    },[reload,cityid,dispatch])
     console.log(itinerary.comments);
     return(
         <div className="comments-box">
@@ -77,7 +76,7 @@ function Comments({itinerary, cityid}){
                     :
                         itinerary.comments.map(comments=>
                             (
-                            user.id==comments.iduser._id?
+                            user.id===comments.iduser._id?
                             (
                             <div className="comment" key={comments._id}>
                                 {/* <p>{user.}</p> */}

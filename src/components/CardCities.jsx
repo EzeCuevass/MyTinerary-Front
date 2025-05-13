@@ -13,9 +13,9 @@ function CardCities({cardFilter}){
                     </LinkRouter>
                 </div>
                 <div className='body-card'>
-                    <h3>{city.cityname}</h3>
-                    <h4>{city.country}</h4>
-                    <LinkRouter to={`citydetails/${city._id}`}>
+                    <h3 className='card-title'>{city.cityname}</h3>
+                    <h4 className='card-country'>{city.country}</h4>
+                    <LinkRouter to={`citydetails/${city._id}`} className='see-more'>
                         See more
                     </LinkRouter>
                 </div>
