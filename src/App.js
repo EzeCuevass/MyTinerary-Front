@@ -1,6 +1,21 @@
 import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
+// importo todos los archivos de la carpeta de styles
+import './styles/activities.css';
 import './styles/App.css';
+import './styles/banner.css';
+import './styles/button.css';
+import './styles/citiesfilter.css';
+import './styles/comments.css';
+import './styles/details.css';
+import './styles/error.css';
+import './styles/footer.css';
+import './styles/index.css';
+import './styles/itineraries.css';
+import './styles/navbar.css';
+import './styles/signup.css';
+import './styles/slider.css';
+
 import Footer from './components/Footer';
 import Main from "./components/Main"
 import {Route, Routes} from "react-router-dom"
